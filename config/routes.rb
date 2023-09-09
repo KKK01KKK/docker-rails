@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  get 'courses/index' => 'courses#index'
+  get 'courses/new' => 'courses#new'
+  get 'courses/:id/edit' => 'courses#edit'
+  get 'courses/:id' => 'courses#show'
+  post 'courses/:id/update' => 'courses#update'
+  post 'courses/:id/destroy' => 'courses#destroy'
+  post 'courses/create' => 'courses#create'
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+  get '/' => 'home#top'
+  get 'about' => 'home#about'
 end

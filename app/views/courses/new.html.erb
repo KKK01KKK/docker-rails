@@ -1,0 +1,18 @@
+<div class="main courses-new">
+  <div class="container">
+    <h1 class="form-heading">コース作成</h1>
+    <%= form_tag("/courses/create") do %>
+        <div class="form">
+            <div class="form-body">
+                <% @course.errors.full_messages.each do |message| %>
+                    <div class="form-error">
+                        <%= message %>
+                    </div>
+                <% end %>
+                <textarea name="name"><%= @course.name %></textarea>
+                <input type="submit" value="コースを公開">
+            </div>
+        </div>
+    <% end %>
+  </div>
+</div>

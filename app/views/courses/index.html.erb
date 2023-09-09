@@ -1,0 +1,9 @@
+<div class="main courses-index">
+  <div class="container">
+    <% @courses.each do |course| %>
+      <div class="courses-index-item">
+        <%= link_to(course.name, "/courses/#{course.id}") %>
+      </div>
+    <% end %>
+  </div>
+</div>

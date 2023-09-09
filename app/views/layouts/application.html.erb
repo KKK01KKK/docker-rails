@@ -10,6 +10,29 @@
     <%= javascript_importmap_tags %>
   </head>
 
+  <header>
+    <div class="header-logo">
+      <%= link_to("英語コーチング比較ナビ", "/") %>
+    </div>
+    <ul class="header-menus">
+      <li>
+        <%= link_to("英語コーチング比較ナビとは", "/about") %>
+      </li>
+      <li>
+        <%= link_to("コース一覧", "/courses/index") %>
+      </li>
+      <li>
+        <%= link_to("新規コース作成", "/courses/new") %>
+      </li>
+    </ul>
+  </header>
+
+  <% if flash[:notice] %>
+    <div class="flash">
+      <%= flash[:notice] %>
+    </div>
+  <% end %>
+
   <body>
     <%= yield %>
   </body>
