@@ -14,11 +14,11 @@
     object-fit: cover;
 }
 
-.course-user-name a {
+.course-coach-name a {
     font-weight: 600;
 }
 
-.course-user-name a:hover {
+.course-coach-name a:hover {
     color: #3ecdc6;
 }
 
@@ -55,7 +55,7 @@
     object-fit: cover;
 }
 
-.courses-show-item .post-user-name a {
+.courses-show-item .course-coach-name a {
     vertical-align: middle;
     font-size: 24px;
     margin-left: 15px;

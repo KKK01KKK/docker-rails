@@ -1,0 +1,15 @@
+<div class="main coaches-index">
+  <div class="container">
+    <h1 class="coachs-heading">コーチー一覧</h1>
+    <% @coaches.each do |coach| %>
+      <div class="coachs-index-item">
+        <div class="coach-left">
+          <img src="<%="/coach_images/#{coach.image_name}"%>">
+        </div>
+        <div class="coach-right">
+          <%= link_to(coach.name, "/coaches/#{coach.id}") %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
