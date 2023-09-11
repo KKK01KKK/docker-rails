@@ -1,25 +1,9 @@
 <div class="main coach-show">
   <div class="container">
     <div class="coach">
-      <img src="<%="/coach_images/#{@coach.image_name}"%>">
       <h2><%= @coach.name %></h2>
       <p><%= @coach.email %></p>
-      <% if @coach.id == @current_coach.id %>
-        <%= link_to("編集", "/coaches/#{@coach.id}/edit") %>
-      <% end %>
+      <%= link_to("編集", "/coaches/#{@coach.id}/edit") %>
     </div>
-    <% @coach.courses.each do |course| %>
-       <div class="courses-index-item">
-        <div class="course-left">
-          <img src="<%= "/coach_images/#{course.coach.image_name}" %>">
-        </div>
-        <div class="course-right">
-          <div class="course-coach-name">
-            <%= link_to(course.coach.name, "/coaches/#{course.coach.id}") %>
-          </div>
-          <%= link_to(course.name, "/courses/#{course.id}") %>
-        </div>
-      </div>
-    <% end %>
   </div>
 </div>

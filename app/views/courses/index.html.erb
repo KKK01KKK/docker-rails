@@ -2,15 +2,7 @@
   <div class="container">
     <% @courses.each do |course| %>
       <div class="courses-index-item">
-      <div class="course-left">
-        <img src="<%= "/coach_images/#{course.coach.image_name}" %>">
-      </div>
-      <div class="course-right">
-        <div class="course-coach-name">
-          <%= link_to(course.coach.name, "/coaches/#{course.coach.id}") %>
-        </div>
-        <%= link_to(course.name, "/coaches/#{course.id}") %>
-      </div>
+        <%= link_to(course.name, "/courses/#{course.id}") %>
       </div>
     <% end %>
   </div>

@@ -1,22 +1,10 @@
-<div class="main courses-show">
-  <div class="container">
-        <div class="courses-show-item">
-            <div class="course-coach-name">
-                <img src="<%= "/coach_images/#{@coach.image_name}" %>">        
-                <%= link_to(@coach.name, "/coaches/#{@coach.id}") %>
-            </div>
-            <p>
-            <%= @course.name %>
-            </p>
-            <div class="course-time">
-                <%= @course.created_at %>
-            </div>
-            <% if @course.coach_id == @current_coach.id %>
-                <div class="course-menus">
-                    <%= link_to("編集", "/courses/#{@course.id}/edit") %>
-                    <%= link_to("削除", "/courses/#{@course.id}/destroy", data: { "turbo-method": :post }) %>
-                </div>
-            <% end %>
-        </div>
-  </div>
+<div class="courses-show-item">
+    <%= @course.name %>
+    <div class="course-time">
+        <%= @course.created_at %>
+    </div>
+    <div class="course-menus">
+        <%= link_to("編集", "/courses/#{@course.id}/edit") %>
+        <%= link_to("削除", "/courses/#{@course.id}/destroy", data: { "turbo-method": :post }) %>
+    </div>
 </div>

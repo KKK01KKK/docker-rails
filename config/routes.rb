@@ -1,8 +1,4 @@
 Rails.application.routes.draw do
-  get 'login' => 'coaches#login_form'
-  post 'login' => 'coaches#login'
-  post 'logout' => 'coaches#logout'
-
   get 'signup' => 'coaches#new'
   get 'coaches/index' => 'coaches#index'
   get 'coaches/:id/edit' => 'coaches#edit'
