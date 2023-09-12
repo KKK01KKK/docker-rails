@@ -1,5 +1,5 @@
 class CoachesController < ApplicationController
-  before_action :authenticate_coach, {only: [:show, :edit, :update]}
+  before_action :authenticate_coach, {only: [:edit, :update]}
   before_action :forbid_login_coach, {only: [:new, :create, :login_form, :login]}
 
   def index

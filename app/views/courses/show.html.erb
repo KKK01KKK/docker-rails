@@ -11,12 +11,12 @@
             <div class="course-time">
                 <%= @course.created_at %>
             </div>
-            <% if Like.find_by(user_id: @current_user, course_id: @course.id) %>
-                <%= link_to("/likes/#{@course.id}/create", data: { "turbo-method": :post }) do %>
+            <% if Like.find_by(user_id: @current_user.id, course_id: @course.id) %>
+                <%= link_to("/likes/#{@course.id}/destroy", data: { "turbo-method": :post }) do %>
                     <span class="fa fa-heart liked-btn"></span>
                 <% end %>
             <% else %>
-                <%= link_to("/likes/#{@course.id}/destroy", data: { "turbo-method": :post }) do %>
+                <%= link_to("/likes/#{@course.id}/create", data: { "turbo-method": :post }) do %>
                     <span class="fa fa-heart unliked-btn"></span>
                 <% end %>
             <% end %>
