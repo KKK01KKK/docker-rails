@@ -1,5 +1,5 @@
 class CoursesController < ApplicationController
-  before_action :authenticate_coach
+  before_action :authenticate_coach, {only: [:new]}
   before_action :ensure_correct_user, {only: [:edit, :update, :destroy]}
   
   def index

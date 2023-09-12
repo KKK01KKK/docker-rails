@@ -1,14 +1,27 @@
 Rails.application.routes.draw do
-  get 'login' => 'coaches#login_form'
-  post 'login' => 'coaches#login'
-  post 'logout' => 'coaches#logout'
+  post 'likes/:course_id/create' => 'likes#create'
+  post 'likes/:course_id/destroy' => 'likes#destroy'
 
-  get 'signup' => 'coaches#new'
+  get 'signup' => 'users#new'
+  get 'users/:id/edit' => 'users#edit'
+  get 'users/:id' => 'users#mypage'
+  post 'users/create' => 'users#create'
+  post 'users/update' => 'users#update'
+  post 'users/:id/destroy' => 'users#destroy'
+
+  get 'login' => 'users#login_form'
+  post 'login' => 'users#login'
+  post 'logout' => 'users#logout'
+  
   get 'coaches/index' => 'coaches#index'
+  get 'coaches/signup' => 'coaches#new'
   get 'coaches/:id/edit' => 'coaches#edit'
+  get 'coaches/login' => 'coaches#login_form'
   get 'coaches/:id' => 'coaches#show'
   post 'coaches/create' => 'coaches#create'
   post 'coaches/:id/update' => 'coaches#update'
+  post 'coaches/login' => 'coaches#login'
+  post 'coaches/logout' => 'coaches#logout'
 
   get 'courses/index' => 'courses#index'
   get 'courses/new' => 'courses#new'

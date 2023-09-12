@@ -11,7 +11,16 @@
             <div class="course-time">
                 <%= @course.created_at %>
             </div>
-            <% if @course.coach_id == @current_coach.id %>
+            <% if Like.find_by(user_id: @current_user, course_id: @course.id) %>
+                <%= link_to("/likes/#{@course.id}/create", data: { "turbo-method": :post }) do %>
+                    <span class="fa fa-heart liked-btn"></span>
+                <% end %>
+            <% else %>
+                <%= link_to("/likes/#{@course.id}/destroy", data: { "turbo-method": :post }) do %>
+                    <span class="fa fa-heart unliked-btn"></span>
+                <% end %>
+            <% end %>
+            <% if @current_coach && @course.coach_id == @current_coach.id %>
                 <div class="course-menus">
                     <%= link_to("編集", "/courses/#{@course.id}/edit") %>
                     <%= link_to("削除", "/courses/#{@course.id}/destroy", data: { "turbo-method": :post }) %>

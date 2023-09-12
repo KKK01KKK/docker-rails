@@ -8,26 +8,23 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
 
   <header>
     <div class="header-logo">
-      <% if @current_coach %>
-          <%= link_to("英語コーチング比較ナビ", "/courses/index") %>
-      <% else %>
-          <%= link_to("英語コーチング比較ナビ", "/") %>
-      <% end %>
+      <%= link_to("英語コーチング比較ナビ", "/") %>
     </div>
     <ul class="header-menus">
-        <% if @current_coach %>
+        <% if @current_user %>
           <li>
-            <%= link_to(@current_coach.name, "/coaches/#{@current_coach.id}") %>
+            <%= link_to(@current_user.name, "/users/#{@current_user.id}") %>
           </li>
           <li>
             <%= link_to("コース一覧", "/courses/index") %>
           </li>
           <li>
-            <%= link_to("新規コース作成", "/courses/new") %>
+            <%= link_to("マイページ", "/users/#{@current_user.id}") %>
           </li>
           <li>
             <%= link_to("コーチ一覧", "/coaches/index") %>
@@ -58,4 +55,27 @@
   <body>
     <%= yield %>
   </body>
+
+  <footer>
+      <div class ="footer-left">
+        <p>Copyright 2023 英語コーチング比較ナビ All Rights Reserved</p>
+      </div>
+      <div class ="footer-right">
+        <ul class="footer-list">
+         <% if @current_coach %>
+          <li>
+            <%= link_to("コーチログアウト", "/coaches/logout") %>
+          </li>
+         <% else %>
+         <li>
+            <%= link_to("コーチ登録", "/coaches/signup") %>
+          </li>
+          <li>
+            <%= link_to("コーチログイン", "/coaches/login") %>
+          </li>
+         <% end %>
+        </ul>
+      </div>
+  </footer>
+
 </html>

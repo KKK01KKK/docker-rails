@@ -1,5 +1,5 @@
 class CoachesController < ApplicationController
-  before_action :authenticate_coach, {only: [:index, :show, :edit, :update]}
+  before_action :authenticate_coach, {only: [:show, :edit, :update]}
   before_action :forbid_login_coach, {only: [:new, :create, :login_form, :login]}
 
   def index
@@ -71,6 +71,6 @@ class CoachesController < ApplicationController
   def logout
     session[:coach_id] = nil
     flash[:notice] = "ログアウトしました"
-    redirect_to("/login")
+    redirect_to("coaches/login")
   end
 end
