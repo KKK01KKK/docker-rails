@@ -71,6 +71,6 @@ class CoachesController < ApplicationController
   def logout
     session[:coach_id] = nil
     flash[:notice] = "ログアウトしました"
-    redirect_to("coaches/login")
+    redirect_to("/coaches/login")
   end
 end

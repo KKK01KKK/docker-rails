@@ -15,13 +15,13 @@ Rails.application.routes.draw do
   
   get 'coaches/index' => 'coaches#index'
   get 'coaches/signup' => 'coaches#new'
-  get 'coaches/:id/edit' => 'coaches#edit'
   get 'coaches/login' => 'coaches#login_form'
+  get 'coaches/:id/edit' => 'coaches#edit'
   get 'coaches/:id' => 'coaches#show'
+  post 'coaches/logout' => 'coaches#logout'
   post 'coaches/create' => 'coaches#create'
   post 'coaches/:id/update' => 'coaches#update'
   post 'coaches/login' => 'coaches#login'
-  post 'coaches/logout' => 'coaches#logout'
 
   get 'courses/index' => 'courses#index'
   get 'courses/new' => 'courses#new'

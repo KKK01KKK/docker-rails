@@ -1,0 +1,15 @@
+                                          Table "public.courses"
+   Column   |              Type              | Collation | Nullable |               Default   
+            
+------------+--------------------------------+-----------+----------+-------------------------
+------------
+ id         | bigint                         |           | not null | nextval('courses_id_seq'
+::regclass)
+ name       | text                           |           |          | 
+ created_at | timestamp(6) without time zone |           | not null | 
+ updated_at | timestamp(6) without time zone |           | not null | 
+ coach_id   | integer                        |           |          | 
+Indexes:
+    "courses_pkey" PRIMARY KEY, btree (id)
+
+

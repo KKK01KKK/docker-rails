@@ -32,6 +32,22 @@
           <li>
             <%= link_to("ログアウト", "/logout", data: { "turbo-method": :post }) %>
           </li>
+        <% elsif @current_coach %>
+          <li>
+            <%= link_to(@current_coach.name, "/coaches/#{@current_coach.id}") %>
+          </li>
+          <li>
+            <%= link_to("コース一覧", "/courses/index") %>
+          </li>
+          <li>
+            <%= link_to("マイページ", "/coaches/#{@current_coach.id}") %>
+          </li>
+          <li>
+            <%= link_to("コーチ一覧", "/coaches/index") %>
+          </li>
+          <li>
+            <%= link_to("ログアウト", "/coaches/logout", data: { "turbo-method": :post }) %>
+          </li>
         <% else %>
           <li>
             <%= link_to("英語コーチング比較ナビとは", "/about") %>
@@ -64,7 +80,7 @@
         <ul class="footer-list">
          <% if @current_coach %>
           <li>
-            <%= link_to("コーチログアウト", "/coaches/logout") %>
+            <%= link_to("コーチログアウト", "/coaches/logout", data: { "turbo-method": :post }) %>
           </li>
          <% else %>
          <li>
