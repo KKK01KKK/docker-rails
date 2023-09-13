@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   post 'logout' => 'users#logout'
   
   get 'coaches/index' => 'coaches#index'
+  get 'coaches/:id/mypage' => 'coaches#mypage'
   get 'coaches/signup' => 'coaches#new'
   get 'coaches/login' => 'coaches#login_form'
   get 'coaches/:id/edit' => 'coaches#edit'

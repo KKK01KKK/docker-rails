@@ -1,5 +1,5 @@
 class CoachesController < ApplicationController
-  before_action :authenticate_coach, {only: [:edit, :update]}
+  before_action :authenticate_coach, {only: [:edit, :update, :mypage]}
   before_action :forbid_login_coach, {only: [:new, :create, :login_form, :login]}
 
   def index
@@ -38,6 +38,10 @@ class CoachesController < ApplicationController
     @coach = Coach.find_by(id: params[:id])
     @coach.name = params[:name]
     @coach.email = params[:email]
+    @coach.self_introduction = params[:self_introduction]
+    @coach.qualification = params[:qualification]
+    @coach.achievement = params[:achievement]
+    @coach.opening_slot = params[:opening_slot]
     if params[:image]
       @coach.image_name = "#{@coach.id}.jpg"
       image = params[:image]
@@ -72,5 +76,9 @@ class CoachesController < ApplicationController
     session[:coach_id] = nil
     flash[:notice] = "ログアウトしました"
     redirect_to("/coaches/login")
+  end
+
+  def mypage
+    @coach = Coach.find_by(id: params[:id])
   end
 end

@@ -4,6 +4,10 @@
       <img src="<%="/coach_images/#{@coach.image_name}"%>">
       <h2><%= @coach.name %></h2>
       <p><%= @coach.email %></p>
+      <p><%= @coach.self_introduction %></p>
+      <p><%= @coach.qualification %></p>
+      <p><%= @coach.achievement %></p>
+      <p><%= @coach.opening_slot %></p>
       <% if @coach.id == @current_coach&.id %>
         <%= link_to("編集", "/coaches/#{@coach.id}/edit") %>
       <% end %>

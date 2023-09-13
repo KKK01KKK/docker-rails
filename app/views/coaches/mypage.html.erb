@@ -1,0 +1,28 @@
+<div class="mypage-left">
+    <ul class="mypage-menus">
+        <li>
+            <%= link_to("新規コース作成", "/courses/new") %>
+        </li>
+        <li>
+            <%= link_to("プロフィールを確認する", "/coaches/#{@coach.id}") %>
+        </li>
+        <li>
+            <%= link_to("プロフィールを編集する", "/coaches/#{@coach.id}/edit") %>
+        </li>
+    </ul>
+</div>
+<div class="mypage-main">
+    <% @coach.courses.each do |course| %>
+       <div class="courses-index-item">
+        <div class="course-left">
+          <img src="<%= "/coach_images/#{course.coach.image_name}" %>">
+        </div>
+        <div class="course-right">
+          <div class="course-coach-name">
+            <%= link_to(course.coach.name, "/coaches/#{course.coach.id}") %>
+          </div>
+          <%= link_to(course.name, "/courses/#{course.id}") %>
+        </div>
+      </div>
+    <% end %>
+</div>

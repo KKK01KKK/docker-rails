@@ -15,6 +15,14 @@
             <input name="image" type="file">
             <p>メールアドレス</p>
             <input value="<%= @coach.email %>" name="email">
+            <p>自己紹介</p>
+            <textarea name="self_introduction"><%= @coach.self_introduction %></textarea>
+            <p>資格</p>
+            <textarea name="qualification"><%= @coach.qualification %></textarea>
+            <p>指導実績</p>
+            <textarea name="achievement"><%= @coach.achievement %></textarea>
+            <p>空き状況</p>
+            <textarea name="opening_slot"><%= @coach.opening_slot %></textarea>
             <input type="submit" value="保存">
         <% end %>
       </div>
